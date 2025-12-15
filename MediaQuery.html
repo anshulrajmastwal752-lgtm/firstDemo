@@ -4,8 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        .flex{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* mobile view */
+        @media (max-width:400px) {
+            .links{
+                display: none;
+            }
+            h1{
+                font-size: 2rem;
+                color: brown;
+                font-family: cursive;
+            }
+            }
+            /* tablet view */
+            
+            @media(min-width:400px) and (max-width:800px) {
+                .links{
+                    display: block;
+                    background-color: blue;
+                    }
+                }
+                /* laptop view */
+                @media(min-width:1399px) and (max-width:1440px){
+                    h1{
+                        background-color: crimson;
+                    }
+                }
+            
+       
+       
+        
+    </style>
 </head>
 <body>
-    <div class="container"></div>
+    <nav class="flex">
+        <div class="h1"><h1>Codeware</h1></div>
+        <div class="links">
+            <span>Home</span>
+            <span>about us</span>
+            <span>querry</span>
+            <span>login</span>
+        </div>
+    </nav>
 </body>
 </html>
