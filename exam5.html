@@ -1,112 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving Car Animation</title>
 
-        }
-        body{
-            padding: 130px;
-            background: #fafafa;
-        
-        }
-        .container{
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            
-            gap: 10px;
-
-        }
-        .cards{
-            background: white;
-            width: 300px;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 1px 4px 10px rgb(0, 0, 0, 1.5);
-            border-radius: 10px;
-            height: 200px;
-        }
-        .quote{
-                font-size: 40px;
-    margin-bottom: 10px;
-    color: gray;
-        }
-        .text{
-                font-size: 16px;
-    margin-bottom: 10px;
-     color: #444;
-        }
-        .profile{
-            display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-        .circle{
-            display: flex;
-    height: 44px;
-    width: 45px;
-    background: #80808066;
-    border-radius: 22px;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-        }
-        .know{
-            text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-        }
-        a{
-                text-decoration: none;
-    font-size: 17px;
-    /* text-align: -webkit-match-parent; */
-    font-weight: bold;
-        }
-    </style>
+
+/* SKY */
+.sky{
+    background-image: url(sky.jpg);
+    height:100vh;
+    width:100vw;
+    position:relative;
+    overflow:hidden;
+}
+
+/* CITY */
+.city{
+    height:350px;
+    width:200%;
+    background-image:url(city.png);
+    background-repeat:repeat-x;
+    position:absolute;
+    bottom:100px;
+    animation: MovingCity 7s linear infinite;
+}
+
+@keyframes MovingCity{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+}
+
+/* ROAD */
+.road{
+    height:100px;
+    width:200%;
+    background-image:url(road.jpg);
+    position:absolute;
+    bottom:0;
+    animation: MovingRoad 5s linear infinite;
+}
+
+@keyframes MovingRoad{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+}
+
+/* CAR */
+.car{
+    background-image:url(car.png);
+    height:250px;
+    width:600px;
+    background-size:contain;
+    background-repeat:no-repeat;
+    position:absolute;
+    bottom:40px;
+    animation: MovingCar 7s linear infinite;
+}
+
+@keyframes MovingCar{
+    0%{ transform:translateX(-100%); }
+    50%{ transform:translateX(40%); }
+    100%{ transform:translateX(200%); }
+}
+
+/* SALLU BHAI */
+.sallubhai{
+    position:absolute;
+    top:-110px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:5;
+}
+
+.sallubhai img{
+    height:100px;
+}
+
+/* TYRES */
+.tyre{
+    background-image:url(wheel.png);
+    height:120px;
+    width:120px;
+    background-size:contain;
+    background-repeat:no-repeat;
+    position:absolute;
+    bottom:0;
+    animation: MovingTyre 1s linear infinite;
+}
+
+.left{
+    left:46px;
+}
+
+.right{
+    left:415px;
+}
+
+@keyframes MovingTyre{
+    from{ transform:rotate(0deg); }
+    to{ transform:rotate(360deg); }
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="cards">
-            <div class="quote">"</div>
-            <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quibusdam.</div>
-    <div class="profile">
-        <div class="circle">DS</div>
-        <span>Diksha S</span>
-        
-            <a href="#">visit this to know more</a>
-        
-    </div>
-        </div>
-        <div class="cards">
-            <div class="quote">"</div>
-            <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quibusdam.</div>
-    <div class="profile">
-        <div class="circle">DS</div>
-        <span>Diksha S</span>
-        
-            <a href="#">visit this to know more</a>
-        
-    </div>
-        </div>
-        <div class="cards">
-            <div class="quote">"</div>
-            <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quibusdam.</div>
-    <div class="profile">
-        <div class="circle">DS</div>
 
+<div class="sky">
 
-            <a href="#">visit this to know more</a>
+    <div class="city"></div>
+    <div class="road"></div>
 
-        </div> 
+    <div class="car">
+
+        <div class="sallubhai">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ3qcjwcwgXQ1G_GeuQLKxi7czVYIJ6dVKYA&s" alt="">
         </div>
+
+        <div class="tyre left"></div>
+        <div class="tyre right"></div>
+
     </div>
+
+</div>
+
 </body>
 </html>
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .sky{
+            height: 100vh;
+            width: 100vw;
+            background-image: url(sky.jpg);
+            position: relative;
+            overflow: hidden;
+        }
+        .road{
+            background-image: url(road.jpg);
+            height: 150px;
+            position: absolute;
+            bottom: 0;
+            width: 200%;
+            animation: movingRoad 5s linear infinite normal;
+        }
+
+        @keyframes movingRoad{
+            0%{
+                transform: translateX(0);
+            }
+            100%{
+                transform: translateX(-50%);
+            }
+        }
+
+        .city{
+            background-image: url(city.png);
+            height: 200px;
+            position: absolute;
+            bottom: 25%;
+            background-repeat: repeat-x;
+            width: 200%;
+            animation: movingCity 10s linear infinite normal;
+        }
+
+        @keyframes movingCity{
+            0%{
+                transform: translateX(0);
+            }
+            100%{
+                transform: translateX(-50%);
+            }
+        }
+
+
+        .car{
+            background-image: url(car.png);
+            height: 300px;
+            width: 500px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            bottom: -10px;
+            animation: movingCar 7s linear infinite ;
+        }
+
+        @keyframes movingCar{
+            0%{
+                /* transform: translateX(-100%); */
+                transform: translate(-100%,0px);
+            }
+            50%{
+                transform: translate(100%,0px);
+            }
+            100%{
+                transform: translate(200%,4px);
+                /* transform: translateX(200%); */
+            }
+        }
+        .tyre{
+            background-image: url(wheel.png);
+            height: 90px;
+            width: 90px;
+            background-size: contain;
+            position: absolute;
+            animation: movingTyre 1s linear infinite;
+        }
+        @keyframes movingTyre{
+            0%{
+                transform: rotate(0deg)
+            }
+            100%{
+                transform: rotate(360deg)          
+            }
+        }
+        .right{
+            bottom: 100px;
+            left: 43px;
+        }
+        .left{
+            bottom: 100px;
+            left: 350px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sky">
+        <div class="city"></div>
+        <div class="road"></div>
+        <div class="car">
+            <div class="tyre left"></div>
+            <div class="tyre right"></div>
+        </div>
+    </div>
+</body>
+</html>

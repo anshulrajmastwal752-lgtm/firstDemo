@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0;
+            margin: 0;}
+            .sky{
+                background-image: url(sky.jpg);
+                height: 100vh;
+                width: 100vw;
+                position: relative;
+                overflow: hidden;}
+                .city{
+                    height: 350px;
+                    width: 200%;
+                    background-image: url(city.png);
+                    background-repeat: repeat;
+                    position: absolute;
+                bottom: 0;
+                animation: MovingCity 7s  linear infinite normal;
+                }
+                @keyframes MovingCity{
+                    0%{ 
+                       transform: translateX(0);
+                
+                    }
+                    100%{
+                        transform: translateX(-50%);
+                    }
+                }
+                .road{
+                    height: 100px;
+                    width: 200vw;
+                    background-image: url(road.jpg);
+                    position: absolute;
+                    bottom: 0;
+                    animation: MovingRoad 5s  infinite linear  normal;
+                    
+                }
+                @keyframes MovingRoad{
+                    0%{
+                       transform: translateX(0);
+                    }
+                    100%{
+                         transform: translateX(-50%);
+
+                    }
+                }
+                .car{
+                    background-image: url(car.png);
+                    height: 250px;
+                    width: 600px;
+                    position: absolute;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    bottom: 0;
+                    animation: MovingCar 7s  infinite linear  ;
+                }
+                @keyframes MovingCar{
+                    0%{
+                        /* transform: translate(-100%); */
+                          transform: translate(-100%,0px);
+                    }
+                    25%{
+                        transform: translate(30%,0px);
+                    }
+                    50%{
+                        transform: translate(80%);
+                    }
+                        
+                    
+                    100%{
+                        /* transform: translate(200%); */
+                         transform: translate(200%,4px);
+                    }
+                }
+                .tyre{
+                    background-image:url(wheel.png);
+                    height: 120px;
+                   width: 120px;
+                   background-size: contain;
+                   background-repeat: no-repeat;
+                   position: absolute;
+                   bottom: 0;
+                   left: 46px;
+                   animation: MovingTyre 5s infinite  linear;
+                }
+                
+                @keyframes MovingTyre{
+                    0%{
+                        transform:rotate(0deg);
+                    }
+                    
+                    100%{
+                        transform: rotate(360deg);
+                    }
+                }
+                .right{
+                    bottom: 6px;
+                   left: 415px;
+                }
+                .left{
+                    bottom: 0;
+                    left: 46px;
+                }
+                .sallubhai{
+                    position: absolute;
+                    left: 50%;
+                    
+                }
+                .sallubhai img{
+                    height: 100px;
+                }
+                .deer{
+                    position: fixed;
+                    left: 80%;
+                    bottom: 0;
+                }
+                .deer img{
+                    height: 100px;
+                }
+    </style>
+</head>
+<body>
+    <div class="sky">
+        <div class="city"></div>
+        <div class="road"></div>
+        <div class="car">
+           <div class="sallubhai
+           "><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ3qcjwcwgXQ1G_GeuQLKxi7czVYIJ6dVKYA&s" alt=""></div>
+           <div class="deer">
+            <img src="https://covenantwildlife.com/wp-content/uploads/2021/03/wildlife-id-Whitetail-Deer.jpg">
+           </div>
+
+            <div class="tyre right"></div>
+            <div class="tyre left"></div>
+        </div>
+    </div>
+</body>
+</html>
