@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aliceblue;
+            gap: 5rem;
+            
+            
+        }
+        .scence{
+            perspective: 500px;
+        }
+        .cardbody{
+            height: 210px;
+            width: 250px;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transform-style: preserve-3d;
+        transition: 0.5s ease;
+    ;}
+            
+
+              .scence:hover .cardbody{
+            transform: rotateY(180deg);
+          }
+         .front, .back{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+         }
+         .front{
+            background-color: aquamarine;
+         }
+          .back{
+            background-color: violet;
+            transform: rotateY(180deg);
+          }
+          /* in X axis */
+          .scence-2{
+            perspective: 500px;
+          }
+          .cardbody-2{
+            height: 210px;
+            width: 250px;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transform-style: preserve-3d;
+            transition: 0.5s ease;
+          }
+          .scence-2:hover .cardbody-2{
+            transform: rotateX(180deg);
+          }
+          .scence-2:hover .cardbody{
+            transform: rotateX(180deg);
+          }
+          .front-2, .back-2{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            padding: 10px;
+
+          }
+          .front-2{
+            background-color: blanchedalmond;
+          }
+          .back-2{
+            background-color: cadetblue;
+            transform: rotateX(180deg);
+          }
+         
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="scence">
+            <div class="cardbody">
+                <div class="front">
+                    front
+                </div>
+                <div class="back">
+                    Back
+                    
+                </div>
+            </div>
+
+
+        </div>
+        <div class="scence-2">
+            <div class="cardbody-2">
+                <div class="front-2">
+                    front
+                </div>
+                <div class="back-2">
+                    Back
+                    
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html>

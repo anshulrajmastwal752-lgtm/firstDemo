@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: aliceblue;
+            gap: 3rem;
+        }
+
+        .scene{
+            perspective: 250px;
+        }
+
+        .cardbody {
+            height: 200px;
+            width: 250px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            transform-style: preserve-3d;
+            transition: 0.5s ease;
+        }
+
+        .scene:hover .cardbody{
+            transform: rotateY(180deg);
+        }
+
+        .front,
+        .back {
+            height: 100%;
+            width: 100%;
+            padding: 10px;
+            position: absolute;
+            backface-visibility: hidden;
+        }
+
+        .front {
+            background-color: yellow;
+            
+        }
+        
+        .back {
+            background-color: orange;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="scene">
+            <div class="cardbody">
+                <div class="front">
+                    <p>front</p>
+                </div>
+                <div class="back">
+                    <p>Back</p>
+                </div>
+            </div>
+        </div>
+           <div class="scene">
+            <div class="cardbody">
+                <div class="front">
+                    <p>front</p>
+                </div>
+                <div class="back">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum accusantium ipsam voluptate ratione quos, sapiente eius aliquam dignissimos rerum explicabo!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- 
+prespective : 0- 800px
+transform-style : preserve-3d
+backface-visibility : true -->
